@@ -9,3 +9,4 @@ RUN apt-get -y install \
 # Install rvm
 RUN bash -l -c "curl -L https://get.rvm.io | bash -s stable; . /etc/profile; rvm reload"
 RUN bash -l -c "rvm install 2.1.1"
+RUN bash -l -c "gem list --local bundler | grep '^bundler[ \t]*(' || gem install bundler"
